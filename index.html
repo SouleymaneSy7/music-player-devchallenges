@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A music player challenges from devchallenges.io."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Music Player - Dev Challenges</title>
+  </head>
+  <body>
+    <main class="music">
+      <audio src="./music/song-1.mp3" id="audio"></audio>
+
+      <section class="music__img">
+        <img class="music--cover" alt="Song Cover" />
+      </section>
+
+      <section class="music__info">
+        <h1 class="music--title" id="title">Lost in the City Lights</h1>
+        <p class="music--name">Cosmo Sheldrake</p>
+      </section>
+
+      <section class="music__progress">
+        <div>
+          <div class="music--duration remains-time">00:00</div>
+          <div class="music--duration total-time">00:00</div>
+        </div>
+
+        <div class="music--progress-container">
+          <div class="music--progress"></div>
+        </div>
+      </section>
+
+      <section class="music__navigation">
+        <button
+          type="button"
+          class="music--btn"
+          id="previous--btn"
+          title="Previous Song"
+        >
+          <img
+            src="./icons/previous-icons.svg"
+            alt="Previous icons for songs"
+          />
+        </button>
+
+        <button
+          type="button"
+          class="music--btn play-btn"
+          id="play--btn"
+          title="Play Song"
+        >
+          <i class="fa-solid fa-play"></i>
+        </button>
+
+        <button
+          type="button"
+          class="music--btn"
+          id="next--btn"
+          title="Next Song"
+        >
+          <img src="./icons/next-icons.svg" alt="Next icons for the songs" />
+        </button>
+      </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+@use "./reset";
+
+// ============================
+//      Customs Properties
+// ============================
+
+:root {
+  // Colors
+  --primary-clr: hsl(335, 57%, 51%);
+  --secondary-clr: hsl(217, 24%, 17%);
+  --tertiary-clr: hsl(217, 12%, 34%);
+  --white-clr: hsl(220, 13%, 91%);
+
+  // Fonts
+  --font-family: "Inter", sans-serif;
+
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --fs-name: 1rem;
+  --fs-author: 0.75rem;
+  --fs-small: 0.625rem;
+}
+
+// ============================
+//      General Styling
+// ============================
+
+body {
+  font-family: var(--font-family);
+
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  padding: 1.25rem;
+  overflow-x: hidden;
+}
+
+.music {
+  --main-width: 25rem;
+  width: min(100%, var(--main-width));
+
+  background-color: var(--secondary-clr);
+  border-radius: 1rem;
+
+  padding-block: min(1.25rem, 2.5vh);
+  padding-inline: 1.25rem;
+}
+
+.music__img {
+  width: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.music__info {
+  text-align: center;
+
+  margin-block-start: min(1rem, 2vh);
+  margin-block-end: min(1.25rem, 2.5vh);
+
+  & .music--title {
+    font-size: var(--fs-name);
+    font-weight: var(--fw-semi-bold);
+    letter-spacing: 0.0625rem;
+    color: var(--white-clr);
+    line-height: 1.8;
+  }
+
+  & .music--name {
+    font-size: var(--fs-author);
+    font-weight: var(--fw-semi-bold);
+    color: var(--tertiary-clr);
+  }
+}
+
+.music__progress {
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .music--duration {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-bold);
+      color: var(--tertiary-clr);
+    }
+  }
+
+  & .music--progress-container {
+    width: 100%;
+    height: 0.3125rem;
+
+    background-color: var(--white-clr);
+    border-radius: 100vmax;
+
+    margin-block-start: min(0.25rem, 0.5vh);
+    cursor: pointer;
+
+    & .music--progress {
+      height: 100%;
+
+      background-color: var(--primary-clr);
+      border-radius: 100vmax;
+
+      transition: width 120ms ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.music__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-block-start: min(1.5rem, 3vh);
+  margin-block-end: min(1rem, 2vh);
+
+  & .music--btn {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+
+    display: grid;
+    place-items: center;
+
+    width: 2.8125rem;
+    height: 2.8125rem;
+
+    padding: 0;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: auto;
+    }
+
+    & img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &.play-btn {
+      display: grid;
+      place-items: center;
+
+      width: 3.75rem;
+      height: 3.75rem;
+
+      border-radius: 100vmax;
+      background-color: var(--primary-clr);
+
+      & i {
+        font-size: 1.3rem;
+        color: var(--white-clr);
+      }
+    }
+  }
+}
